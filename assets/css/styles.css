@@ -1,0 +1,28 @@
+body {
+	background-color: #001;
+	background-image: url("../images/sanfran.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	font-family: "Helvetica", "arial," sans-serif;	
+}
+
+.jumbotron {
+	background-color: rgba(26, 0, 26, .5);
+	color: white;
+	font-family: 'Sriracha', cursive;
+	font-weight: bold;
+}
+
+p > a {
+	border-radius: 1px;
+	color: white;
+    background: rgba(217, 102, 255, .5);
+    font-size: medium;
+    padding: 1em;
+}
+
+p > a:hover {
+	background: rgba(255, 255, 204, .3);
+	color: white;
+}

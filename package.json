@@ -1,0 +1,35 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.1",
+  "description": "simple dating app",
+  "main": "server.js",
+  "scripts": {
+    "test": "app.listen(PORT, function () {",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JenPhD/FriendFinder.git"
+  },
+  "keywords": [
+    "dating",
+    "app",
+    "friend",
+    "finder",
+    "node",
+    "express",
+    "servers",
+    "javascript"
+  ],
+  "author": "Jen Pemberton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JenPhD/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/JenPhD/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "path": "^0.12.7"
+  }
+}
