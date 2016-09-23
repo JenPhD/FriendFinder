@@ -3,27 +3,66 @@
 //Loading DATA
 // Dependencies 
 // =============================================================
-var friends = require('../data/friends');
+var friendsArray = require('../data/friends.js');
 
 // =============================================================
 //ROUTING
 
 module.exports = function(app) {
-		//API GET request
-		//The code bellow will handel when user visits the page.
-		//In each of the below cases when the user visits the link
-		app.get('../data/friends', function(req, res) {
-			res.json(friends);
+	//API GET request for the data from the surveys already taken
+	app.get('/api/friends', function(req, res){
+		res.json(friendsData);
+
+		//fix for CORS problem
+		app.use(function(req, res, next) {
+		  res.header("Access-Control-Allow-Origin", "*");
+		  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+		  next();
 		});
+	});
 
-		//Creats a New Friend if true
-		// app.post('/api/friends', function(req, res) {
-		// 	if(){
+	// API POST Requests
+	app.post('/api/friends',function(req,res){
 
-		// 	}
-		// })
+		var newFriend = req.body;
+			
+		friendsArray.push(newFriend);
 
+			
+		var differenceScore = 0;
 
+			
+		var differencesArray = [];
+			
 
+		for (var i = 0; i < (friendsArray.length - 1); i++){
+				
+				
+			for (var j = 0; j < friendsArray[i].scores.length; j++){
+					differenceScore += Math.abs(friendsArray[i].scores[j] - newFriend.scores[j]);
+				}
 
+				differencesArray.push(differenceScore);
+				differenceScore = 0;
+		}
+			
+			var friendMatch = friendsArray[differencesArray.indexOf(Math.min.apply(null, differencesArray))];
+
+			res.send(friendMatch);
+
+	});
 }
+
+
+// Create New Characters - takes in JSON input
+// app.post('../data/new', function (req, res) {
+// 	var newFriend = req.body;
+
+// 	console.log(newFriend);
+
+// 	friends.push(newFriend);
+
+// 	res.json(friends);
+// });
+
+// }

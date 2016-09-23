@@ -23,7 +23,34 @@ module.exports = function (app) {
 	});
 	app.get('/survey*', function (req, res) {
 		res.sendFile(path.join(__dirname,'..', '/survey.html'));
-	});
+	
 
+		// $('#submit').on('click', function () {
+		// 		var newFriend = {
+		// 			name: $('#name').val().trim(),
+		// 			phone: $('#photo').val().trim(),
+		// 			email: $('#email').val().trim(),
+		// 			scores: [
+		// 			$('#q1').val(),
+		// 			$('#q2').val(),
+		// 			$('#q3').val(),
+		// 			$('#q4').val(),
+		// 			$('#q5').val(),
+		// 			$('#q6').val(),
+		// 			$('#q7').val(),
+		// 			$('#q8').val(),
+		// 			$('#q9').val(),
+		// 			$('#q10').val()
+		// 			]
+					
+		// 		};
+		// 		$.post('http://localhost:3000/data/new', newFriend)
+		// 			.done(function (data) {
+		// 				console.log(data);
+		// 				alert('Adding friend...');
+		// 			});
+		// 		return false;
+		// });
+	});
 }
 
