@@ -1,4 +1,4 @@
-$(document).ready(function () {
+// $(document).ready(function () {
   // Chosen CSS to allow users to deselect choice to choose another and make sure user enters a value for each.
   var config = {
     '.chosen-select'           : {},
@@ -38,8 +38,10 @@ $(document).ready(function () {
           name: $("#name").val().trim(),
           photo: $("#photo").val().trim(),
           email: $("#email").val().trim(),
-          scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+          scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
         }
+
+        console.log(friendData);
 
         // Get the URL of the website
         var currentURL = window.location.origin;
@@ -62,4 +64,4 @@ $(document).ready(function () {
       
       return false;
     });
-});
+//});

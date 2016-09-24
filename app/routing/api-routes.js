@@ -22,10 +22,11 @@ module.exports = function(app) {
 	});
 
 	// API POST Requests
-	app.post('/api/friends',function(req,res){
+	app.post('../data/friends',function(req,res){
 
 		var newFriend = req.body;
-			
+		console.log(newFriend);
+		
 		friendsArray.push(newFriend);
 
 			
