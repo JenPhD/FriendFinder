@@ -1,4 +1,4 @@
-// $(document).ready(function () {
+$(document).ready(function () {
   // Chosen CSS to allow users to deselect choice to choose another and make sure user enters a value for each.
   var config = {
     '.chosen-select'           : {},
@@ -64,4 +64,4 @@
       
       return false;
     });
-//});
+});

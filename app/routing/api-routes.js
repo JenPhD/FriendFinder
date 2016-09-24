@@ -11,14 +11,8 @@ var friendsArray = require('../data/friends.js');
 module.exports = function(app) {
 	//API GET request for the data from the surveys already taken
 	app.get('/api/friends', function(req, res){
-		res.json(friendsData);
-
-		//fix for CORS problem
-		app.use(function(req, res, next) {
-		  res.header("Access-Control-Allow-Origin", "*");
-		  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-		  next();
-		});
+		res.json(friendsArray);
+		console.log(friendsArray);
 	});
 
 	// API POST Requests
@@ -26,7 +20,7 @@ module.exports = function(app) {
 
 		var newFriend = req.body;
 		console.log(newFriend);
-		
+
 		friendsArray.push(newFriend);
 
 			
