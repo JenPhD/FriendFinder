@@ -1,5 +1,4 @@
-$(document).ready(function () {
-  // Chosen CSS to allow users to deselect choice to choose another and make sure user enters a value for each.
+ // Chosen CSS to allow users to deselect choice to choose another and make sure user enters a value for each.
   var config = {
     '.chosen-select'           : {},
     '.chosen-select-deselect'  : {allow_single_deselect:true},
@@ -12,6 +11,8 @@ $(document).ready(function () {
     $(selector).chosen(config[selector]);
   }
 
+//Require data from friends array to add survey results
+ 
   //Get and store survey results 
     $("#submit").on("click", function(){
 
@@ -33,21 +34,21 @@ $(document).ready(function () {
 
     // If all required fields are completed
     if (validateForm() == true) {
-      // Create an object for friends data
-        var friendData = {
+      // Create an object for friends array
+        var friends = {
           name: $("#name").val().trim(),
           photo: $("#photo").val().trim(),
           email: $("#email").val().trim(),
           scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
         }
 
-        console.log(friendData);
+        console.log(friends);
 
         // Get the URL of the website
         var currentURL = window.location.origin;
  
         // AJAX post the data to the friendsArray. 
-        $.post(currentURL + "/api/friends", friendData, function(data){
+        $.post(currentURL + "/api/friends", friends, function(data){
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#matchName").text(data.name);
@@ -64,4 +65,3 @@ $(document).ready(function () {
       
       return false;
     });
-});

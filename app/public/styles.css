@@ -1,6 +1,6 @@
 body {
 	background-color: #001;
-	background-image: url("../images/sanfran.jpg");
+	background-image: url("sanfran.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: white;
@@ -12,6 +12,12 @@ body {
 	color: white;
 	font-family: 'Sriracha', cursive;
 	font-weight: bold;
+}
+
+.modal-title {
+	font-family: 'Sriracha', cursive;
+	font-size: large;
+	color: rgb(217, 102, 255);
 }
 
 p > a {

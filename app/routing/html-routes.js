@@ -7,22 +7,22 @@ var path = require('path');
 
 module.exports = function (app) {
 
-	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({ extended: true }));
-	app.use(bodyParser.text());
-	app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-	
 	//HTML GET requests
 	//Handles when users visit a page. Shows html content.
-	//If no matching route is found default to home
-	app.use('/', function (req, res) {
-		res.sendFile(path.join(__dirname,'..', 'public/home.html'));
-	});
+	
 	app.get('/home*', function (req, res) {
 		res.sendFile(path.join(__dirname,'..', 'public/home.html'));
 	});
 	app.get('/survey*', function (req, res) {
-		res.sendFile(path.join(__dirname,'..', 'public/survey.html'));
+		res.sendFile(path.join(__dirname, '..', 'public/survey.html'));
+
+	//If no matching route is found default to home
+	app.use('/', function (req, res) {
+		res.sendFile(path.join(__dirname,'..', 'public/home.html'));
+	});
+
+	//Use static files in the public folder for css and images.
+	//app.use(express.static(__dirname + '/public'));
 	
 
 		// $('#submit').on('click', function () {
