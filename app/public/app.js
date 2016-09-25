@@ -52,7 +52,7 @@
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#matchName").text(data.name);
-          $('#matchImg').attr("src", data.photo);
+          $("#matchImg").attr("src", data.photo);
 
           // Show the modal with the best match 
           $("#resultsModal").modal('toggle');
@@ -65,3 +65,13 @@
       
       return false;
     });
+
+    //On modal close, clear data for new user
+     $(".close").on("click", function(){
+        $('#name').val(" ");
+        $('#photo').val(" ");
+        $('#email').val(" ");
+
+        //Reset the chosen options back to empty
+        $(".chosen-select").val('').trigger("chosen:updated");
+     });

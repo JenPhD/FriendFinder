@@ -14,11 +14,19 @@ body {
 	font-weight: bold;
 }
 
+
+#matchName {
+	font-family: 'Sriracha', cursive;
+	font-size: large;
+	color: rgb(217, 102, 255);
+}
+
 .modal-title {
 	font-family: 'Sriracha', cursive;
 	font-size: large;
 	color: rgb(217, 102, 255);
 }
+
 
 p > a {
 	border-radius: 1px;
